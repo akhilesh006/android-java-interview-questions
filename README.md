@@ -2,12 +2,12 @@
 
 ## Contents
 - Java: :coffee:
-   - [Beginner](#beginner-:coffee:)
-   - [Expert](#expert-:coffee:)
+   - [Beginner](#beginner-coffee)
+   - [Expert](#expert-coffee)
    - [Best practices](#best practices)
 - Android: :iphone:
-   - [Beginner](#beginner-:iphone:)
-   - [Expert](#expert-:iphone:)
+   - [Beginner](#beginner-iphone)
+   - [Expert](#expert-iphone)
    - [Best practices](#best practices)
 
 # Java
