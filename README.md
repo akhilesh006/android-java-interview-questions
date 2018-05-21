@@ -1,14 +1,14 @@
 # Learning Java & Android in one go...
 
 ## Contents
-- Java: 
-   - [Beginner :coffee:](#beginner)
-   - [Expert :coffee:](#expert)
-   - [Best practices :coffee:](#best_practices)
-- Android:
-   - [Beginner :iphone:](#beginner)
-   - [Expert :iphone:](#expert)
-   - [Best practices :iphone:](#best_practices)
+- Java: :coffee:
+   - [Beginner](#beginner-:coffee:)
+   - [Expert](#expert-:coffee:)
+   - [Best practices](#best practices)
+- Android: :iphone:
+   - [Beginner](#beginner-:iphone:)
+   - [Expert](#expert-:iphone:)
+   - [Best practices](#best practices)
 
 # Java
 ### Beginner :coffee:
