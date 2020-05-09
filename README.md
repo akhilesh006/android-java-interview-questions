@@ -17,6 +17,16 @@
 - ConcurrentHashMap:
     - [Difference HashMap ConcurrentHashMap](https://www.geeksforgeeks.org/difference-hashmap-concurrenthashmap/)
 
+### Intermidiate :coffee:
+- Threading[http://tutorials.jenkov.com/java-concurrency/index.html]
+    - [Semaphore](https://www.geeksforgeeks.org/java-util-concurrent-semaphore-class-java/)
+    Semaphore sem = new Semaphore(5, true); creating a Semaphore object with number of permits 5 and fairness true.
+    A semaphore maintains a set of permits. Each acquire() blocks if necessary until a permit is available, and then takes it. Each release() adds a permit, potentially releasing a blocking acquirer. However, no actual permit objects are used; the Semaphore just keeps a count of the number available and acts accordingly.
+    - void acquire() - This method acquires a permit, if one is available and returns immediately, reducing the number of available permits by one.
+    - void acquire(int permits) - This method acquires the given number of permits, if they are available, and returns immediately, reducing the number of available permits by the given amount.
+    - void release() - This method releases a permit, increasing the number of available permits by one. 
+    - void release(int permits) - This method releases the given number of permits, increasing the number of available permits by that amount.
+
 
 ### Expert :coffee:
 - Singleton Design pattern
