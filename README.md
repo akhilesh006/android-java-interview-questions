@@ -35,6 +35,11 @@
     If two threads are both reading and writing to a shared variable, then using the volatile keyword for that is not enough. You need to use a synchronized in that case to guarantee that the reading and writing of the variable is atomic. Reading or writing a volatile variable does not block threads reading or writing. For this to happen you must use the synchronized keyword around critical sections.
     - As an alternative to a synchronized block you could also use one of the many atomic data types found in the java.util.concurrent package. For instance, the AtomicLong or AtomicReference or one of the others.
 
+    - [How to work with wait(), notify() and notifyAll() in Java?](https://howtodoinjava.com/java/multi-threading/wait-notify-and-notifyall-methods/)
+    - wait(0) - If timeout is zero, however, then real time is not taken into consideration and the thread simply waits until notified. wait(0) is same as wait().
+    - Thread.yield(), Thread.sleep(0), Object.wait(0,1) and LockSupport.parkNanos(1) They all wait a sort period of time, but how much that is varies a surprising amount and between platforms.
+    - Object.wait(long timeout, int nanos) causes current thread to wait until either another thread invokes the notify() method or the notifyAll() method for this object, or a specified amount of time has elapsed.
+    - In particular, wait(0, 0) means the same thing as wait(0) and wait(0) is same as wait();
 
 ### Expert :coffee:
 - Singleton Design pattern
