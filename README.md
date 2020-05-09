@@ -27,6 +27,14 @@
     - void release() - This method releases a permit, increasing the number of available permits by one. 
     - void release(int permits) - This method releases the given number of permits, increasing the number of available permits by that amount.
 
+    - [volatile](http://tutorials.jenkov.com/java-concurrency/volatile.html)
+    - When is use of volatile is not always enough?
+    - volatile int a = a++ + 2; // a++ is not a atomic statement. 
+    Imagine if Thread 1 reads a shared counter variable with the value 0 into its CPU cache, increment it to 1 and not write the changed value back into main memory. Thread 2 could then read the same counter variable from main memory where the value of the variable is still 0, into its own CPU cache. Thread 2 could then also increment the counter to 1, and also not write it back to main memory. Thread 1 and Thread 2 are now practically out of sync. The real value of the shared counter variable should have been 2, but each of the threads has the value 1 for the variable in their CPU caches, and in main memory the value is still 0.
+    - When is use of volatile enough?
+    If two threads are both reading and writing to a shared variable, then using the volatile keyword for that is not enough. You need to use a synchronized in that case to guarantee that the reading and writing of the variable is atomic. Reading or writing a volatile variable does not block threads reading or writing. For this to happen you must use the synchronized keyword around critical sections.
+    - As an alternative to a synchronized block you could also use one of the many atomic data types found in the java.util.concurrent package. For instance, the AtomicLong or AtomicReference or one of the others.
+
 
 ### Expert :coffee:
 - Singleton Design pattern
