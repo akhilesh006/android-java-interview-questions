@@ -67,11 +67,13 @@
     - [MVC MVP MVVP android app development](https://www.simform.com/mvc-mvp-mvvm-android-app-development/)
     - [Shared User Id](https://groups.google.com/forum/#!topic/android-security-discuss/eLPuV6uLQw8)
       SharedUserId is used to share the data,processes etc between two or more applications. It is defined in AndroidManifest.xml like
+      ```xml
       <manifest
           xmlns:android="http://schemas.android.com/apk/res/android"
           android:sharedUserId="android.uid.shared"
           android:sharedUserLabel="@string/sharedUserLabel"
       ...>
+      ```
       [Uses]https://stackoverflow.com/questions/9783765/what-is-shareduserid-in-android-and-how-is-it-used
       - SharedUserId is deprecated in API level 29, Android Q --> Android 10.
       
