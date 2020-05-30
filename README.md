@@ -20,10 +20,10 @@
       - Old/Tenured Generation Area: The remaining objects moved into Old generation which are surviver after many cycle of miner GC. Major GC is performed when Old generation is full.
    - Permanent Generation(PermGen): It is not part of Heap Memory area. It contains Application's metadeat i.e. classes and methods's description for JVM.
       - Method Area/ Class Area: Shared among all threads of an application. Also called PremGen before Java 8, It contains classes structure, constant pool, static method, static variable, constant, method codes and constructor.
-   - Memory Pool: String pool, Integer pool, flot & double pool comes under memory pool area. It can belogs to heap or PermGen area depending upon Memory Manager impplementation.
+   - Memory Pool: String pool comes under memory pool area. It can belogs to heap or PermGen area depending upon Memory Manager impplementation.
    - Runtime Constant Pool: It contains class specific runtime constant of a class and static method, comes under method area.
    - Stack: Static memory area and constant area, Generated for each thread, When full, We get StackOverflowError, It keeps method reference, local variables of method including argument variable and reference to local object created inside method.
-   - Caching(Integer,Float & Double)
+   - Caching(Byte, Character, Integer, Short, Long): Will Discuss it later.
    - Program Counter Register: It is gererated for each thread and it stores current instruction executed by thread.
    - Native Method Stack: Shared among all threads, Same as stack, but used for native method which are outside of Java.
     
@@ -85,6 +85,36 @@
     - Thread.yield(), Thread.sleep(0), Object.wait(0,1) and LockSupport.parkNanos(1) They all wait a sort period of time, but how much that is varies a surprising amount and between platforms.
     - Object.wait(long timeout, int nanos) causes current thread to wait until either another thread invokes the notify() method or the notifyAll() method for this object, or a specified amount of time has elapsed.
     - In particular, wait(0, 0) means the same thing as wait(0) and wait(0) is same as wait();
+    
+    - Java Wrapper Class Caching technique: It is used to improve perforamnce and save memory. It only works on autoboxing.
+      - Byte : private static ByteCache inner class : Range -127 to +127
+      - Short : private static ShortCache inner class : Range -127 to +127
+      - Long : private static LongCache inner class : Range -127 to +127
+      - Integer : private static IntegerCache inner class : Range -127 to +127
+      - Character : private static CharacterCache inner class : Range 0 to +127
+      
+    - We can be modified this range only for Integer by using a VM argument -XX:AutoBoxCacheMax=size
+
+```java
+   Integer x = 10; //autoboxing
+   Integer y = Integer.valueOf(10); //inside story
+   Integer z = new Integer(100);
+   System.out.println(x == y); // true
+   System.out.println(x == z); // false
+   System.out.println(y == z); // false
+   
+   Integer x1 = 128; //autoboxing
+   Integer x2 = 128; //autoboxing
+   System.out.println(x1 == x2); // false   
+
+// Integer's valueOf API
+   public static Integer valueOf(int i) {
+        if (i >= IntegerCache.low && i <= IntegerCache.high)
+            return IntegerCache.cache[i + (-IntegerCache.low)];
+        return new Integer(i);
+   }
+
+```
 
 ### Expert :coffee:
 - Singleton Design pattern
