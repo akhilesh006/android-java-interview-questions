@@ -152,3 +152,7 @@
       [Uses]https://stackoverflow.com/questions/9783765/what-is-shareduserid-in-android-and-how-is-it-used
       - SharedUserId is deprecated in API level 29, Android Q --> Android 10.
       
+
+### Common Tips & Tricks for Competitive Programming.
+#### Big-O: Time Complexity Order
+O(1) < O(log n) < O(\sqrt{n}) < n < n log n < n<sup>2</sup> < n<sup>3</sup> ... < 2<sup>n</sup> < 3<sup>n</sup> ... < n! < n<sup>n</sup>
