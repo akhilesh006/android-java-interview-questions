@@ -156,3 +156,5 @@
 ### Common Tips & Tricks for Competitive Programming.
 #### Big-O: Time Complexity Order
 O(1) < O(log n) < O(\sqrt{n}) < n < n log n < n<sup>2</sup> < n<sup>3</sup> ... < 2<sup>n</sup> < 3<sup>n</sup> ... < n! < n<sup>n</sup>
+
+- [how-to-create-a-memory-leak-in-java](https://stackoverflow.com/questions/6470651/how-to-create-a-memory-leak-in-java)
